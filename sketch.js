@@ -1,10 +1,10 @@
 let video;
 
-let myBodyPose;
+let bodyPose;
 let poses = [];
 
 function preload() {
-  myBodyPose = ml5.bodyPose("MoveNet", { flipped: true });
+  bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
 }
 
 function mousePressed() {
@@ -19,7 +19,7 @@ function setup() {
   video = createCapture(VIDEO, { flipped: true });
   video.hide();
 
-  myBodyPose.detectStart(video, gotPoses);
+  bodyPose.detectStart(video, gotPoses);
 }
 
 function draw() {
